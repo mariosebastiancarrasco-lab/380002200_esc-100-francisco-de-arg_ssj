@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🗺️ ESCUELA N 323 MAESTROS ARGENTINOS</title>
+    <title>🗺️ ESCUELA N 100 FRANCISCO DE ARGAÑARAS</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <style>
@@ -44,26 +44,26 @@
 <body>	
     <!-- mi HTML EXACTO (sin cambios) -->
     <header>
-        <h1>🗺️ ESCUELA N 323 MAESTROS ARGENTINOS</h1>
-        <p>PUESTO VIEJO, Jujuy</p>
+        <h1>🗺️ ESCUELA N 100 FRANCISCO DE ARGAÑARAS</h1>
+        <p>SAN SALVADOR DE JUJUY, Jujuy</p>
     </header>
    
     <div class="container">
         <div id="sidebar">
             <h3>📍 DATOS COMPLETOS</h3>
             <ul>
-                <li><strong>CUE:</strong> 380002000</li>
-                <li><strong>📍 Coordenadas:</strong>-24.49919, -64.9583</li>
-                <li><strong>📞 Teléfono:</strong> ------------</li>
+                <li><strong>CUE:</strong> 380002200</li>
+                <li><strong>📍 Coordenadas:</strong>-24.19598, -65.30465</li>
+                <li><strong>📞 Teléfono:</strong> 3884225475</li>
                 <li><strong>✉️ Email:</strong> <a href="mailto:------ ">------</a></li>
-                <li><strong>📍 Dirección:</strong>(en blanco), -----</li>
-                <li><strong>🏘️ Barrio:</strong> MINETTI</li>
-                <li><strong>Ⓛ Localidad:</strong> PUESTO VIEJO</li>
-                <li><strong>Ⓓ Departamento:</strong> EL CARMEN</li>
-                <li><strong>🌍 Región Educativa:</strong> 6</li>
-                <li><strong>Ⓐ Ámbito:</strong> Rural Aglomerado</li>
+                <li><strong>📍 Dirección:</strong>AV. PERU, -----</li>
+                <li><strong>🏘️ Barrio:</strong> MARIANO MORENO</li>
+                <li><strong>Ⓛ Localidad:</strong> SAN SALVADOR DE JUJUY</li>
+                <li><strong>Ⓓ Departamento:</strong> DOCTOR MANUEL BELGRANO</li>
+                <li><strong>🌍 Región Educativa:</strong> 3</li>
+                <li><strong>Ⓐ Ámbito:</strong> Urbano</li>
                 <li><strong>Ⓢ Sector:</strong> Estatal</li>
-                <li><strong>⏰ Jornada:</strong> Completa</li>
+                <li><strong>⏰ Jornada:</strong> Simple</li>
                 <li><strong>📚 Modalidad - Nivel:</strong> Común - Primaria</li>
                 <li><strong>⭕ Radio de influencia:</strong> 500m (círculo rojo)</li>
             </ul>
@@ -76,7 +76,7 @@
             </div>
            
             <h2>🎛️ Controles</h2>
-            <button onclick="map.setView([-24.49919,-64.9583], 17)">📍 Centrar Colegio</button>
+            <button onclick="map.setView([-24.19598,-65.30465], 17)">📍 Centrar Colegio</button>
             <button onclick="map.locate({setView: true, maxZoom: 17})">📱 Mi Ubicación</button>
              
 
@@ -106,17 +106,17 @@
             'terrain': L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {maxZoom: 18})
         };
        
-        map = L.map('map', {layers: [baseMaps.osm], center: [-24.49919,-64.9583], zoom: 17});  
+        map = L.map('map', {layers: [baseMaps.osm], center: [-24.19598,-65.30465], zoom: 17});  
         currentBaseLayer = baseMaps.osm;
        
         // Marcador escuela ✅
-        L.marker([-24.49919,-64.9583]).addTo(map).bindPopup(`
+        L.marker([-24.19598,-65.30465]).addTo(map).bindPopup(`
             <div style="text-align:center; min-width:280px; font-family:Arial;">
-                <h3 style="color:#2c3e50;">🏫 ESCUELA N 323 MAESTROS ARGENTINOS</h3>
-                <p><strong>CUE:</strong> 380002000 | <strong>📞:</strong> 380002000  - ------------</p>
-                <p><strong>📍:</strong> (en blanco) 0, MINETTI, PUESTO VIEJO</p>
+                <h3 style="color:#2c3e50;">🏫 ESCUELA N 100 FRANCISCO DE ARGAÑARAS</h3>
+                <p><strong>CUE:</strong> 380002200 | <strong>📞:</strong> 380002200  - 3884225475</p>
+                <p><strong>📍:</strong> AV. PERU 1201, MARIANO MORENO, SAN SALVADOR DE JUJUY</p>
                 <p><strong>✉️:</strong> <a href="mailto:------ ">------</a></p>
-                <button onclick="window.open('https://google.com/maps?q=-24.49919,-64.9583')" 
+                <button onclick="window.open('https://google.com/maps?q=-24.19598,-65.30465')" 
                         style="background:#AD2203;color:white;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;width:100%;margin-top:10px;">
                     🚗 Ver en Google Maps
                 </button>
@@ -124,7 +124,7 @@
         `);
 
         // Círculo 500m ✅
-        L.circle([-24.49919,-64.9583], {
+        L.circle([-24.19598,-65.30465], {
             color: '#3498db', fillColor: '#F52749', fillOpacity: 0.3, radius: 500
         }).addTo(map);
 
@@ -145,7 +145,7 @@
             L.marker(e.latlng).addTo(map).bindPopup(
                 `✅ ¡Estás aquí!<br>
                 📍 ${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}<br>
-                📏 ${Math.round(map.distance(e.latlng, [-24.49919,-64.9583]))} m del colegio`
+                📏 ${Math.round(map.distance(e.latlng, [-24.19598,-65.30465]))} m del colegio`
             ).openPopup();
         });
         map.on('locationerror', () => alert('❌ GPS bloqueado. Activa ubicación.'));
